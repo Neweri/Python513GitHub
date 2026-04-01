@@ -9,9 +9,17 @@ def multiply(a, b):
 def subtract(a, b):
     return a - b
 
+def divide(a, b):
+    if b == 0:
+        raise ValueError('На ноль делить нельзя')
+    return a / b
+
 
 if __name__ == '__main__':
     print(add(3, 5))
     print(multiply(5,3))
     print(subtract(5, 3))
-    
+    try:
+        print(divide(10, 2))
+    except ValueError as e:
+        print(e)
